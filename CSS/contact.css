@@ -1,0 +1,21 @@
+/* UTILITY CLASSES */
+
+/* GENERAL STYLES */
+.contactPhoneNumbers {
+  max-width: 1000px;
+}
+
+.contacts li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.contacts li a {
+  margin-left: 10px;
+}
+
+.contacts li::before {
+  content: url('../Assets/Images/arrow-right.svg');
+  margin-right: 10px;
+}

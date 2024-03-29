@@ -1,0 +1,84 @@
+/* Error Popup design */
+.displayErrorPopup {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.displayErrorPopup .errorPopup {
+  position: relative;
+  right: 0;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  background: rgb(255, 255, 255, 0.1);
+  border-radius: 7px;
+  animation: slide 300ms;
+  box-shadow: var(--bs-box-shadow) !important;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+  }
+}
+
+.displayErrorPopup .errorSvg {
+  width: 25px;
+  height: 25px;
+  margin-inline: 20px;
+  color: #ff0000af;
+}
+
+.displayErrorPopup .errorStack {
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.displayErrorPopup .progress {
+  width: 100%;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  height: 8px;
+  position: absolute;
+  bottom: 0;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  margin-left: 5px;
+}
+.displayErrorPopup .sideBar {
+  height: 100%;
+  width: 8px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  position: absolute;
+  left: 0;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.displayErrorPopup .errorName {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.displayErrorPopup .errorMessage {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 375px) {
+  .displayErrorPopup .errorPopup {  
+   width: 80vw;
+   font-size: 12px;
+  }
+
+  .displayErrorPopup .errorName {
+    font-size: 14px;
+  }
+  .displayErrorPopup .errorMessage {
+    font-size: 12px;
+  }
+}
