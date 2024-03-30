@@ -45,6 +45,11 @@
   max-width: 700px;
 }
 
+.container-max-800 {
+  width: 100%;
+  max-width: 800px;
+}
+
 .white-transparent {
   background: rgba(225, 225, 225, 0.1) !important;
   backdrop-filter: blur(10px);
@@ -83,6 +88,30 @@ header {
 .link-non-active:hover {
   --bs-text-opacity: 1;
   fill: rgba(225, 225, 225);
+}
+
+.nav-device-sm {
+  position: relative;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+}
+
+.nav-device-sm .device-sm-menu {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: white;
+  border-radius: 5px;
+}
+
+.nav-device-sm .device-sm-menu li a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-device-sm .device-sm-menu li:hover {
+  background: rgba(225, 225, 225, 0.7);
 }
 
 @media (max-width: 450px) {
@@ -135,22 +164,22 @@ main {
   color: white;
 }
 
-.checkResultBtn, 
-.submitContactBtn {
+.btn-default, 
+.btn-default {
   background: linear-gradient(to right, #3498db, #2980b9);
   color: white;
   border: none;
   transition: all 200ms ease-in-out;
 }
 
-.checkResultBtn:hover,
-.submitContactBtn:hover {
+.btn-default:hover,
+.btn-default:hover {
   color: white;
   background: linear-gradient(to right, hsl(204, 70%, 48%), hsl(204, 64%, 39%));
 }
 
-.checkResultBtn:active,
-.submitContactBtn:active {
+.btn-default:active,
+.btn-default:active {
   color: white !important;
 }
 

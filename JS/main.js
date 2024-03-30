@@ -12,7 +12,7 @@ function initApp() {
   const selectIdNum = document.querySelector('form .selectIdNum');
   const displayErrorPopup = document.querySelector('.displayErrorPopup');
 
-  window.addEventListener('keydown', e => {
+/*   window.addEventListener('keydown', e => {
     if ((e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.key === 'U')) {
       e.preventDefault();
       errorPopup('Error', 'Viewing code in this way is restricted due to privacy reasons.', displayErrorPopup);
@@ -25,7 +25,7 @@ function initApp() {
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
     errorPopup('Error', 'Viewing code in this way is restricted due to privacy reasons.', displayErrorPopup);
-  });
+  }); */
 
   headerLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -53,6 +53,26 @@ function initApp() {
       selectIdNum.classList.add('is-invalid');
     } else {
       selectIdNum.classList.remove('is-invalid');
+    }
+  });
+
+  /* Dropdown toggler for smaller devices */
+  const dropdownToggler = document.querySelector('.dropdown-icon');
+  const deviceSmMenu = document.querySelector('.device-sm-menu');
+  let deviceSmMenuAll = document.querySelectorAll('.device-sm-menu *');
+  deviceSmMenuAll = Array.from(deviceSmMenuAll);
+  
+  dropdownToggler.addEventListener('click', e => {
+    deviceSmMenu.classList.toggle("d-none");
+
+    window.addEventListener('click', removeSubMenu);
+
+    function removeSubMenu(ev) {
+      
+      if ((deviceSmMenuAll.every(el => ev.target !== el)) && (ev.target !== dropdownToggler) && (ev.target !== deviceSmMenu)) {
+        deviceSmMenu.classList.add('d-none');
+        window.removeEventListener("click", removeSubMenu);
+      }
     }
   });
 }
